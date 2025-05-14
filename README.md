@@ -1,6 +1,16 @@
 Thanks to Mario Bălănică for doing the work to get UEFI working on the Pi 5.  This project just aims to provide access to UEFI users with D0 models of the Pi, including 16 GB, 2 GB, and any other recently manufactured model of the others, plus all Compute Modules.  
 
-The source code will not compile in it's current state.   Assistance in getting the edk2 submodule to the point that it can compile would be greatly appreciated.  I can help users make local edits to their repo if they want to help compile and test.  My level of involvement will depend on the level of involvement of the community.  I won't be here to work on features or improvements on my own without collaboration, but am motivated to keep working on improving ACPI compatibility with the Pi if others are. 
+To compile using the old edk2 code that would have been up to date with the last update to the original repo:
+  
+git clone https://github.com/NumberOneGit/rpi5-uefi  
+cd rpi5-uefi  
+git submodule update --init  
+cd edk2  
+git submodule update --init  
+cd ..  
+./build.sh
+  
+The D0 changes the way that alpha channel works and has a more restricted state.  I'm trying edits to DisplayDxe.c that will force any pixels that are only provided with RGB data to force an alpha value of 1. Earlier hardware seems to have automatically assumed an alpha of 1 when only RGB data was included, but the D0 requires RGBA (technically BGRA) and instead of automatically treating missing alpha as 1 (full opacity/no transparency), it treats alpha as 0 (full transparency/no opacity).  Windows and Ubuntu so far seem to handle the alpha on their own, but the Wor Installer and ESXi do not.  Presumably, setting a 24 bit framebuffer in the Wor Installer should get you through to Windows and then Windows should then work with 32 bit framebuffer settings.   ESXi does not really require much access, since it is mainly accessed over the web and not the framebuffer, so for now 24 bit works there too until the framebuffer issue is resolved.  Once it's clear whether we can fix the remaining framebuffer issues, I would like to start to bring edk2 up to date.  If you're interested in hellping with that project, please reply in Issue #1.  My level of involvement will depend on the level of involvement of the community.  I won't be here to work on features or improvements on my own without collaboration, but am motivated to keep working on improving ACPI compatibility with the Pi if others are. 
 
 Dt-bindings are being released for the RP1 within the coming months so we may be able to get ethernet and some other features working.  I have a CM5 and I would eventually like to get eMMC to work properly, but for now CM5 users should boot from NVME or USB.
 
