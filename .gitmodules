@@ -5,11 +5,11 @@
 [submodule "edk2"]
         path = edk2
         url = https://github.com/NumberOneGit/edk2.git
-        branch = 202411
+        branch = 202502
 [submodule "edk2-platforms"]
 	path = edk2-platforms
 	url = https://github.com/NumberOneGit/edk2-platforms.git
-	branch = 202411
+	branch = 202502
 [submodule "edk2-non-osi"]
 	path = edk2-non-osi
 	url = https://github.com/tianocore/edk2-non-osi.git
