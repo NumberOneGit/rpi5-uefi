@@ -4,12 +4,12 @@
 	branch = rpi5
 [submodule "edk2"]
         path = edk2
-        url = https://github.com/Marcinoo97/edk2.git
-        branch = sdmmc-dev
+        url = https://github.com/NumberOneGit/edk2.git
+        branch = 202411
 [submodule "edk2-platforms"]
 	path = edk2-platforms
 	url = https://github.com/NumberOneGit/edk2-platforms.git
-	branch = rpi5-dev
+	branch = 202411
 [submodule "edk2-non-osi"]
 	path = edk2-non-osi
 	url = https://github.com/tianocore/edk2-non-osi.git
