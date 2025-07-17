@@ -8,7 +8,7 @@
         branch = sdmmc-dev
 [submodule "edk2-platforms"]
 	path = edk2-platforms
-	url = https://github.com/NumberOneGit/edk2-platforms.git
+	url = https://github.com/ansleythompson/blueberry-edk2-platforms
 	branch = rpi5-dev
 [submodule "edk2-non-osi"]
 	path = edk2-non-osi
