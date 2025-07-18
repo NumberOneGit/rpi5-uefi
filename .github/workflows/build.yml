@@ -95,6 +95,9 @@ jobs:
       - name: Download Raspberry Pi support files
         run: |
           curl -O -L ${{ env.RPI_FIRMWARE_URL }}/raw/${{ env.DTB_VERSION }}/boot/bcm2712-rpi-5-b.dtb
+          curl -O -L ${{ env.RPI_FIRMWARE_URL }}/raw/${{ env.DTB_VERSION }}/boot/bcm2712-rpi-cm5-cm5io.dtb
+          curl -O -L ${{ env.RPI_FIRMWARE_URL }}/raw/${{ env.DTB_VERSION }}/boot/bcm2712-rpi-cm5l-cm5io.dtb
+          curl -O -L ${{ env.RPI_FIRMWARE_URL }}/raw/${{ env.DTB_VERSION }}/boot/bcm2712-rpi-500.dtb
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
