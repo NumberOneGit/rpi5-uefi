@@ -29,7 +29,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          submodules: false
+
+      - name: Init submodules individually
+        shell: bash
+        run: |
+         git submodule update --init  # Initializes submodules in the root .gitmodules
+         cd edk2 && git submodule update --init || true
+         cd ../edk2-platforms && git submodule update --init || true
 
       - name: Install dependencies
         shell: bash
@@ -108,4 +115,5 @@ jobs:
             RPI_EFI.fd
             config.txt
             *.dtb
+            *.dtbo
           if-no-files-found: error
