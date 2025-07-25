@@ -69,9 +69,10 @@ pushd arm-trusted-firmware || exit
 make \
     PLAT=rpi${MODEL} \
     PRELOADED_BL33_BASE=0x20000 \
-    RPI3_PRELOADED_DTB_BASE=0x1F0000 \
+    RPI3_PRELOADED_DTB_BASE=0x3E0000 \
     SUPPORT_VFP=1 \
     SMC_PCI_SUPPORT=1 \
+    ENABLE_FEAT_VHE=1 \
     DEBUG=${DEBUG} \
     all \
     ${TFA_FLAGS} \
