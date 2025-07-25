@@ -1,0 +1,23 @@
+[package]
+name = "uart_hello_driver"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+uefi = "0.26"
+
+[profile.dev]
+panic = "abort"
+lto = false
+debug = true
+
+[profile.release]
+panic = "abort"
+lto = true
+debug = false
+opt-level = "s"  # Optimize for size
+
+# Ensure we build a binary
+[[bin]]
+name = "uart_hello_driver"
+path = "src/main.rs"
