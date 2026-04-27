@@ -123,7 +123,7 @@ This process assumes a Linux machine. On Windows, use WSL.
 
 2. Clone the repository:
    ```bash
-   git clone --recurse-submodules https://github.com/worproject/rpi5-uefi.git
+   git clone --recurse-submodules https://github.com/NumberOneGit/rpi5-uefi.git
    cd rpi5-uefi
    ```
 
