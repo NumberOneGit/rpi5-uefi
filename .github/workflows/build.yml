@@ -42,6 +42,7 @@ jobs:
           device-tree-compiler \
           gettext \
           git \
+          uuid-dev \
           gcc-aarch64-linux-gnu \
           libc6-dev-arm64-cross \
           python3 \
